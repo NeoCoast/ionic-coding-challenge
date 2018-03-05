@@ -1,10 +1,15 @@
 <ion-content padding>
   <div class="text-styled-area">
-
+    {{ text }}
   </div>
-  <ion-input
-    class="custom-input"
-    placeholder="Text..."
-  ></ion-input>
-  <ion-buttons class="custom-button">Randomize Styles</ion-buttons>
+  <form #form="ngForm" (ngSubmit)="randomizeSubmit(form.value)">
+      <ion-input 
+        class="custom-input"
+        [(ngModel)]="textInput"
+        placeholder="Text..."
+        type="text"
+        name="textInput"
+      ></ion-input>
+      <button ion-button class="custom-button" type="submit">Randomize Styles</button>
+  </form>
 </ion-content>

@@ -1,7 +1,15 @@
 page-home {
+  .scroll-content {
+    display: flex;
+    flex-direction: column;
+  }
+
   .text-styled-area {
     background-color: #f1f9ff;
-    height: calc(100vh - 164px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
   }
 
   .custom-input {
@@ -14,9 +22,10 @@ page-home {
 
   .custom-button {
     background-color: #2699fb;
-    color: #FFF;
+    color: white;
     border-radius: 5px;
     height: 56px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
