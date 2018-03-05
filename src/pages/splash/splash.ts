@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../../pages/home/home';

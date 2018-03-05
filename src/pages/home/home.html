@@ -1,15 +1,11 @@
 <ion-content padding>
   <div class="text-styled-area">
-    {{ text }}
+    <div *ngFor="let sentence of styledSentences" [ngStyle]="sentence.configuration">
+      {{ sentence.sentence}}
+    </div>
   </div>
-  <form [formGroup]="textForm" #formDir="ngForm">
-    <ion-input 
-      class="custom-input"
-      formControlName="textInput"
-      placeholder="Text..."
-      type="text"
-      name="textInput"
-    ></ion-input>
+  <form [formGroup]="textForm" #formDir="ngForm" style="padding: 10px 0px;">
+    <ion-input class="custom-input" formControlName="textInput" placeholder="Text..." type="text" name="textInput"></ion-input>
     <button 
       ion-button
       class="custom-button"

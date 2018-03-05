@@ -10,6 +10,8 @@ page-home {
     align-items: center;
     justify-content: center;
     flex: 1;
+    flex-direction: column;
+    padding: 20px 10px;
   }
 
   .custom-input {
