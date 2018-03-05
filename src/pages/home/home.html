@@ -3,21 +3,21 @@
     {{ text }}
   </div>
   <form [formGroup]="textForm" #formDir="ngForm">
-      <ion-input 
-        class="custom-input"
-        formControlName="textInput"
-        placeholder="Text..."
-        type="text"
-        name="textInput"
-      ></ion-input>
-      <button 
-        ion-button
-        class="custom-button"
-        type="submit"
-        [disabled]="textForm.invalid"
-        (click)="randomizeSubmit()"
-      >
-        Randomize Styles
-      </button>
+    <ion-input 
+      class="custom-input"
+      formControlName="textInput"
+      placeholder="Text..."
+      type="text"
+      name="textInput"
+    ></ion-input>
+    <button 
+      ion-button
+      class="custom-button"
+      type="submit"
+      [disabled]="textForm.invalid"
+      (click)="randomizeSubmit()"
+    >
+      Randomize Styles
+    </button>
   </form>
 </ion-content>

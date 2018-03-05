@@ -1,0 +1,30 @@
+page-splash {
+  .scroll-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .logo-wrapper {
+    font-weight: 600;
+    border: 1px solid black;
+    color: #2699fb;
+    width: 60%;
+    font-size: 20px;
+    padding: 20px 40px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 36px;
+    color: #2598fb;
+  }
+
+  .footer {
+    width: 50%;
+    font-size: 20px;
+    color: #707070;
+    text-align: center;
+  }
+}
