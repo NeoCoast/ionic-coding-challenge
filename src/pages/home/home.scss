@@ -1,3 +1,25 @@
 page-home {
+  .text-styled-area {
+    background-color: #f1f9ff;
+    height: calc(100vh - 164px);
+  }
 
+  .custom-input {
+    margin-top: 10px;
+    border: 1px solid #7ec5fd;
+    color: #7ec5fd;
+    padding: 8px 10px;
+    height: 56px;
+  }
+
+  .custom-button {
+    background-color: #2699fb;
+    color: #FFF;
+    border-radius: 5px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 0 0;
+  }
 }
