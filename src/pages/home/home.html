@@ -2,14 +2,22 @@
   <div class="text-styled-area">
     {{ text }}
   </div>
-  <form #form="ngForm" (ngSubmit)="randomizeSubmit(form.value)">
+  <form [formGroup]="textForm" #formDir="ngForm">
       <ion-input 
         class="custom-input"
-        [(ngModel)]="textInput"
+        formControlName="textInput"
         placeholder="Text..."
         type="text"
         name="textInput"
       ></ion-input>
-      <button ion-button class="custom-button" type="submit">Randomize Styles</button>
+      <button 
+        ion-button
+        class="custom-button"
+        type="submit"
+        [disabled]="textForm.invalid"
+        (click)="randomizeSubmit()"
+      >
+        Randomize Styles
+      </button>
   </form>
 </ion-content>

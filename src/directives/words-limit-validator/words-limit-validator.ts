@@ -1,18 +1,25 @@
-import { Directive } from '@angular/core';
+import { Directive, Input } from '@angular/core';
+import { FormControl, ValidatorFn, AbstractControl } from '@angular/forms';
 
-/**
- * Generated class for the WordsLimitValidatorDirective directive.
- *
- * See https://angular.io/api/core/Directive for more info on Angular
- * Directives.
- */
+export function limitValidator(): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } => {
+    let regex = new RegExp(/^(\w*\s*){1,5}$/, 'i');
+    let valid = regex.test(control.value);
+
+    return valid ? null : {
+      limit: {
+        valid: false
+      }
+    }
+  };
+}
+
 @Directive({
-  selector: '[words-limit-validator]' // Attribute selector
+  selector: '[words-limit-validator]'
 })
+
 export class WordsLimitValidatorDirective {
-
-  constructor() {
-    console.log('Hello WordsLimitValidatorDirective Directive');
+  validate(control: FormControl): { [key: string]: any; } {
+    return limitValidator();
   }
-
 }
