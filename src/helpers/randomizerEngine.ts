@@ -1,17 +1,23 @@
+const colors = ['black', 'red', 'green', 'blue'];
+const fontSizes = ['20px', '21px', '22px', '23px', '24px', '25px', '26px', '27px', '28px', '29px', '30px'];
+const paddings = ['10px 10px', '0px 0px', '10px 0px', '0px 10px'];
+const fontWeights = [200, 400, 600, 800];
+const fontFamilies = [
+  "'Roboto', sans-serif",
+  "'Krona One', sans-serif",
+  "'Merriweather', serif",
+  "'Anton', sans-serif",
+  "'Coiny', cursive"
+];
+
+
 function randomArray(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
-function chooseConfiguration(alignment) {
-  const colors = ['black', 'red', 'green', 'blue'];
-  const fontSizes = ['20px', '21px', '22px', '23px', '24px', '25px', '26px', '27px', '28px', '29px', '30px'];
-  const paddings = ['10px 10px', '0px 0px', '10px 0px', '0px 10px'];
-  const fontWeights = ['200', '400', '600'];
-  const fontFamilies = [];
-  
+function chooseConfiguration(alignment) {  
   const selectedColor = randomArray(colors);
   return {
-    'width': '100%',
     'text-align': alignment,
     'border': randomArray(['1px', '0px']) + ' solid ' + selectedColor,
     'text-transform': randomArray(['uppercase', 'lowercase', 'capitalize']),
@@ -21,7 +27,8 @@ function chooseConfiguration(alignment) {
     'text-decoration': randomArray(['underline', 'none']),
     'padding': randomArray(paddings),
     'font-weight': randomArray(fontWeights),
-    'font-family': randomArray(fontFamilies)
+    'font-family': randomArray(fontFamilies),
+    'text-shadow': randomArray(['0px', '2px']) + ' ' + randomArray(['0px', '2px']) + ' lightgray'
   }
 }
 

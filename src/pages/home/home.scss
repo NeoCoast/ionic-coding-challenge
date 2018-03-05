@@ -1,3 +1,5 @@
+@import '../../theme/variables.scss';
+
 page-home {
   .scroll-content {
     display: flex;
@@ -5,7 +7,7 @@ page-home {
   }
 
   .text-styled-area {
-    background-color: #f1f9ff;
+    background-color: $light-gray;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,14 +18,14 @@ page-home {
 
   .custom-input {
     margin-top: 10px;
-    border: 1px solid #7ec5fd;
-    color: #7ec5fd;
+    border: 1px solid $secondary-blue;
+    color: $primary-blue;
     padding: 8px 10px;
     height: 56px;
   }
 
   .custom-button {
-    background-color: #2699fb;
+    background-color: $primary-blue;
     color: white;
     border-radius: 5px;
     height: 56px;
