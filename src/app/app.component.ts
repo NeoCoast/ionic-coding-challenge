@@ -7,7 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { SplashPage } from '../pages/splash/splash';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
 })
 export class MyApp {
   rootPage:any = SplashPage;

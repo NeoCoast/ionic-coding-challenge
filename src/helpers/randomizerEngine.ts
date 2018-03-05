@@ -1,6 +1,6 @@
 const colors = ['black', 'red', 'green', 'blue'];
-const fontSizes = ['20px', '21px', '22px', '23px', '24px', '25px', '26px', '27px', '28px', '29px', '30px'];
-const paddings = ['10px 10px', '0px 0px', '10px 0px', '0px 10px'];
+const fontSizes = ['24px', '28px', '32px', '36px'];
+const paddings = ['10px 10px', '0px 10px'];
 const fontWeights = [200, 400, 600, 800];
 const fontFamilies = [
   "'Roboto', sans-serif",
@@ -11,24 +11,25 @@ const fontFamilies = [
 ];
 
 
-function randomArray(array) {
+function randomize(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
 function chooseConfiguration(alignment) {  
-  const selectedColor = randomArray(colors);
+  const selectedColor = randomize(colors);
   return {
+    'width': '250px',
     'text-align': alignment,
-    'border': randomArray(['1px', '0px']) + ' solid ' + selectedColor,
-    'text-transform': randomArray(['uppercase', 'lowercase', 'capitalize']),
-    'font-size': randomArray(fontSizes),
+    'border': randomize(['1px', '0px']) + ' solid ' + selectedColor,
+    'text-transform': randomize(['uppercase', 'lowercase', 'capitalize']),
+    'font-size': randomize(fontSizes),
     'color': selectedColor,
-    'background-color': randomArray(['none', 'white']),
-    'text-decoration': randomArray(['underline', 'none']),
-    'padding': randomArray(paddings),
-    'font-weight': randomArray(fontWeights),
-    'font-family': randomArray(fontFamilies),
-    'text-shadow': randomArray(['0px', '2px']) + ' ' + randomArray(['0px', '2px']) + ' lightgray'
+    'background-color': randomize(['none', 'white']),
+    'text-decoration': randomize(['underline', 'none']),
+    'padding': randomize(paddings),
+    'font-weight': randomize(fontWeights),
+    'font-family': randomize(fontFamilies),
+    'text-shadow': randomize(['0px', '2px']) + ' ' + randomize(['0px', '2px']) + ' lightgray'
   }
 }
 
@@ -41,7 +42,7 @@ export function randomizeWordsByLine(string) {
   let sentenceAtMoment = '';
   
   // this is just for better styling
-  const alignment = randomArray(['center', 'right', 'left']);
+  const alignment = randomize(['center', 'right', 'left']);
   words.forEach((word, index) => {
     if (sentenceAtMoment === '') {
       sentenceAtMoment = word;
@@ -49,6 +50,7 @@ export function randomizeWordsByLine(string) {
       sentenceAtMoment += ' ' + word;
     }
 
+    // if this is the last word, we have to add it to the wordsByLine array
     if (index === words.length - 1) {
       wordsByLine.push({
         'sentence': sentenceAtMoment,

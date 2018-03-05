@@ -6,13 +6,7 @@
   </div>
   <form [formGroup]="textForm" #formDir="ngForm" style="padding: 10px 0px;">
     <ion-input class="custom-input" formControlName="textInput" placeholder="Text..." type="text" name="textInput"></ion-input>
-    <button 
-      ion-button
-      class="custom-button"
-      type="submit"
-      [disabled]="textForm.invalid"
-      (click)="randomizeSubmit()"
-    >
+    <button ion-button class="custom-button" type="submit" [disabled]="textForm.invalid" (click)="randomizeSubmit()">
       Randomize Styles
     </button>
   </form>

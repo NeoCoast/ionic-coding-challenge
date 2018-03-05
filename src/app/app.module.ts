@@ -16,7 +16,20 @@ import { SplashPage } from '../pages/splash/splash';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, 
+      {
+        platforms: {
+          android: {
+            scrollAssist: false,
+            autoFocusAssist: false
+          },
+          ios: {
+            scrollAssist: false,
+            autoFocusAssist: false
+          }
+        }
+      }
+    )
   ],
   bootstrap: [IonicApp],
   entryComponents: [
